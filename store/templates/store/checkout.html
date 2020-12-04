@@ -41,10 +41,25 @@ Checkout - {{ block.super}}
                 <input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
             </form>
         </div>
+        <br>
+        <div class="box-for-element hidden" id="payment-info">
+            <small>Paypal Options</small>
+        </div>
     </div>
     <div class="col-lg-6">
         <div class="box-for-element">
-
+            <a class="btn btn-outline-secondary" href="{% url 'cart' %}">&#171; Back to Cart</a>
+            <hr>
+            <h3>Order Summary</h3>
+            <hr>
+            <div class="cart-row">
+                <div style="flex:2"><img class="row-image" src="{% static 'images/placeholder.png' %}"></div>
+                <div style="flex:2">Product 1</div>
+                <div style="flex:1">$13.49</div>
+                <div style="flex:1"><p>2</p></div>
+            </div>
+            <h5>Items:    2</h5>
+            <h5>Total:   $26.98</h5>
         </div>
     </div>
 </div>
