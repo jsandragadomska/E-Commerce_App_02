@@ -7,20 +7,46 @@ Cart - {{ block.super}}
 <div class="row">
     <div class="col-lg-12">
         <div class="box-for-element">
-            <a class="btn btn-outline-secondary" href="{% url 'store' %}" >&#171; Continue Shopping</a>
+            <a class="btn btn-outline-secondary" href="{% url 'store' %}">&#171; Continue Shopping</a>
             <table class="table">
                 <tr>
-                    <th><h5>Items: <strong>3</strong></h5></th>
-                    <th><h5>Total: <strong>$37.95</strong></h5></th>
                     <th>
-                        <a style="float: right; margin: 5px;" class="btn btn-outline-secondary" href="{% url 'checkout' %}">Checkout</a>
+                        <h5>Items: <strong>3</strong></h5>
+                    </th>
+                    <th>
+                        <h5>Total: <strong>$37.95</strong></h5>
+                    </th>
+                    <th>
+                        <a style="float: right; margin: 5px;" class="btn btn-outline-secondary"
+                            href="{% url 'checkout' %}">Checkout</a>
                     </th>
                 </tr>
             </table>
         </div>
         <br>
         <div class="box-for-element">
-
+            <div class="cart-row">
+                <div style="flex:2"></div>
+                <div style="flex:2"><strong>Item</strong></div>
+                <div style="flex:1"><strong>Price</strong></div>
+                <div style="flex:1"><strong>Quantity</strong></div>
+                <div style="flex:1"><strong>Total</strong></div>
+            </div>
+            <div class="cart-row">
+                <div style="flex:2"><img class="row-image" src="{% static 'images/placeholder.png' %}"></div>
+                <div style="flex:2">Product 1</div>
+                <div style="flex:1">$13.49</div>
+                <div style="flex:1">
+                    <p class="quantity">2</p>
+                    <div class="quantity">
+                        <img data-product="{{item.product.id}}" data-action="add" class="chg-quantity update-cart"
+                            src="{% static  'images/arrow-up.png' %}">
+                        <img data-product="{{item.product.id}}" data-action="remove" class="chg-quantity update-cart"
+                            src="{% static  'images/arrow-down.png' %}">
+                    </div>
+                </div>
+                <div style="flex:1">$26.98</div>
+            </div>
         </div>
     </div>
 </div>
