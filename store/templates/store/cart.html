@@ -1,6 +1,27 @@
 {% extends 'store/main.html' %}
 {% load static %}
-
+{% block title %}
+Cart - {{ block.super}}
+{% endblock %}
 {% block content %}
-<h3>cart</h3>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box-for-element">
+            <a class="btn btn-outline-secondary" href="{% url 'store' %}" >&#171; Continue Shopping</a>
+            <table class="table">
+                <tr>
+                    <th><h5>Items: <strong>3</strong></h5></th>
+                    <th><h5>Total: <strong>$37.95</strong></h5></th>
+                    <th>
+                        <a style="float: right; margin: 5px;" class="btn btn-outline-secondary" href="{% url 'checkout' %}">Checkout</a>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div class="box-for-element">
+
+        </div>
+    </div>
+</div>
 {% endblock %}
