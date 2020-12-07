@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from .models import Product, Post
 
 def store(request):
-    context = {}
+    products = Product.objects.all
+    context = {'products':products}
     return render(request, 'store/store.html', context)
 
 def cart(request):
@@ -14,3 +16,8 @@ def checkout(request):
 
 def about(request):
     return render(request, 'store/about.html')
+
+def blog(request):
+    posts = Post.objects.all
+    context = {'posts':posts}
+    return render(request, 'store/blog.html', context)
